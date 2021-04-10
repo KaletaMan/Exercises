@@ -1,0 +1,15 @@
+package Exercises;
+
+public class AverageValue {
+    public static void main(String[] args) {
+        double averageValue = 0;
+        int a;
+        for (String i : args) {
+            a = Integer.parseInt(i);
+            averageValue = averageValue + a;
+        }
+        if (args.length!=0) {
+            System.out.println(averageValue / args.length);
+        }
+    }
+}
