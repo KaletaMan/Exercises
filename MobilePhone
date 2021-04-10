@@ -1,0 +1,51 @@
+package Exercises.MobilePhone;
+
+public class MobilePhone {
+    private String brand;
+    private String model;
+    private int batteryCapacity;
+    private int batteryAmount;
+    private int memory;
+    private int freeMemory;
+
+    public MobilePhone(String brand, String model, int batteryCapacity, int memory) {
+        this.brand = brand;
+        this.model = model;
+        this.batteryCapacity = batteryCapacity;
+        this.memory = memory;
+        batteryAmount = batteryCapacity;
+        freeMemory = memory;
+    }
+
+    public void charge() {
+        batteryAmount = batteryCapacity;
+        System.out.printf("%s %s has been charged. Remain battery capacity: %d mAh%n", brand, model, batteryCapacity);
+    }
+
+    public void installApplication(String nameOfApplication, int size) {
+        if (batteryAmount != 0) {
+            if (freeMemory > size) {
+                freeMemory = freeMemory - size;
+                System.out.printf("Application %s has been installed on %s %s. Remain memory: %d MB%n", nameOfApplication, brand, model, freeMemory);
+            } else {
+                System.out.printf("Application %s can't be installed on %s %s. There are no enough memory%n", nameOfApplication, brand, model, freeMemory);
+            }
+        } else {
+            System.out.printf("Application %s can't be installed on %s %s. Phone discharged%n",nameOfApplication, brand, model);
+        }
+    }
+
+    public void use(String nameOfApplication, int time) {
+        if (time < (batteryAmount/100)) {
+            batteryAmount = batteryAmount - (time*100);
+            System.out.printf("Application %s has been ran for %d hours on %s %s. Remain battery capacity: %d mAh%n", nameOfApplication, time, brand, model, batteryAmount);
+        } else if (batteryAmount != 0) {
+            System.out.printf("Application %s has been used for %d hours on %s %s. Phone has been discharged.%n", nameOfApplication, batteryAmount/100, brand, model);
+            batteryAmount = 0;
+        } else {
+            System.out.printf("Application %s can't be run on %s %s. Phone discharged.%n", nameOfApplication, brand, model);
+        }
+
+
+    }
+}
