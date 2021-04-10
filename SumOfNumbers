@@ -1,0 +1,13 @@
+package Exercises;
+
+public class SumOfNumbers {
+    public static void main(String[] args) {
+        int number;
+        int sum = 0;
+        for (String i : args) {
+            number = Integer.parseInt(i);
+            sum = sum + number;
+        }
+        System.out.println(sum);
+    }
+}
