@@ -1,0 +1,37 @@
+package Exercises.Cat;
+
+public class Cat {
+    private final String name;
+    private boolean isHungry;
+
+    public Cat(String name, boolean isHungry) {
+        this.name = name;
+        this.isHungry = isHungry;
+    }
+
+    public void isHungry() {
+        if (isHungry) {
+            System.out.println("Tom is hungry");
+        } else {
+            System.out.println("Tom is not hungry");
+        }
+    }
+
+    public void eat(String food) {
+        if (!isHungry) {
+            System.out.printf("%s is not hungry%n", name);
+        } else {
+            System.out.printf("%s is eating %s%n", name, food);
+            isHungry = false;
+        }
+    }
+
+    public void play(String toy) {
+        System.out.printf("%s is playing around with %s%n", name, toy);
+    }
+
+    public void sleep(int time) {
+        isHungry = true;
+        System.out.printf("%s is going to sleep for %d hours%n", name, time);
+    }
+}
