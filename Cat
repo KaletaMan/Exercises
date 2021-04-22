@@ -11,9 +11,9 @@ public class Cat {
 
     public void isHungry() {
         if (isHungry) {
-            System.out.println("Tom is hungry");
+            System.out.printf("%s is hungry", name);
         } else {
-            System.out.println("Tom is not hungry");
+            System.out.printf("%s is not hungry", name);
         }
     }
 
