@@ -1,0 +1,67 @@
+package Exercises.CarWithEngine;
+
+public class Car {
+    private final String name;
+    private final int fuelTankCapacity;
+    private int remainingFuel;
+    private final Engine engine;
+    private final String engineName;
+    private final int horsePower;
+    private final int engineCapacity;
+    private boolean isStarted;
+
+
+    public Car(String name, int fuelTankCapacity, Engine engine) {
+        this.name = name;
+        this.fuelTankCapacity = fuelTankCapacity;
+        remainingFuel = fuelTankCapacity;
+        this.engine = engine;
+        engineName = engine.getName();
+        horsePower = engine.getHorsepower();
+        engineCapacity = engine.getCapacity();
+        this.isStarted = engine.isStarted();
+    }
+
+    public void tank () {
+        remainingFuel = fuelTankCapacity;
+        System.out.printf("Car %s has been tanked up%n", name);
+    }
+
+    public void drive(int speed, int street) {
+        if (isStarted == false) {
+            System.out.printf("Car %s cant be driven cause engine stopped%n", name);
+        } else {
+            if (speed >= horsePower * 2) {
+                speed = horsePower * 2;
+            }
+            if (remainingFuel == 0) {
+                System.out.printf("Car %s can't be driven. Tank is empty%n", name);
+            } else if (remainingFuel <= street * engineCapacity / 10_000) {
+                System.out.printf("Car %s has been driven for %d km with speed %dkm/h. Tank is empty%n", name, remainingFuel * 10_000 / engineCapacity, speed);
+                remainingFuel = 0;
+            } else {
+                remainingFuel = remainingFuel - street * engineCapacity / 10_000;
+                System.out.printf("Car %s has been driven for %d km with speed %dkm/h. Remaining fuel: %dL%n", name, street, speed, remainingFuel);
+            }
+        }
+    }
+
+    public void startEngine() {
+        if (isStarted == false) {
+            isStarted = true;
+            System.out.printf("Car %s is starting %s engine%n%s engine has been started%n", name, engineName, engineName);
+        } else {
+            System.out.printf("%s engine has been started already in %s%n", engineName, name);
+        }
+    }
+
+    public void stopEngine() {
+        if (isStarted = true) {
+            isStarted = false;
+            System.out.printf("Car %s is stopping %s engine%n%s engine has been stopped%n", name, engineName, engineName);
+        } else {
+            System.out.printf("%s engine has been stopped already in %s%n", engineName, name);
+        }
+    }
+
+}
