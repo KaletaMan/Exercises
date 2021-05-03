@@ -1,0 +1,18 @@
+package Exercises;
+
+public class PrimeNumbers {
+    public static void main(String[] args) {
+        int isNumberPrime;
+        for (int number = 1; number <= 100; number++) {
+            isNumberPrime = 0;
+            for (int divisor = 1; divisor <= number; divisor++) {
+                if (number%divisor == 0) {
+                    isNumberPrime = isNumberPrime + 1;
+                }
+            }
+            if (isNumberPrime == 2) {
+                System.out.printf("%d ", number);
+            }
+        }
+    }
+}
