@@ -1,0 +1,15 @@
+package Exercises;
+
+public class MinimumNumber {
+    public static void main(String[] args) {
+        int number;
+        int minimumNumber = Integer.parseInt(args[0]);
+        for (String i : args) {
+            number = Integer.parseInt(i);
+            if (number < minimumNumber) {
+                minimumNumber = number;
+            }
+        }
+        System.out.printf("Minimum number: %d%n", minimumNumber);
+    }
+}
