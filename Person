@@ -1,0 +1,40 @@
+package exercises.person.and.student;
+
+import java.time.LocalDate;
+
+public abstract class Person {
+    private String firsName;
+    private String lastName;
+    private LocalDate birthDate;
+
+    public Person(String firsName, String lastName, LocalDate birthDate) {
+        this.firsName = firsName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+    }
+
+    public String getFirsName() {
+        return firsName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setFirsName(String firsName) {
+        this.firsName = firsName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+}
+
