@@ -1,0 +1,29 @@
+package exercises.person.and.student;
+
+import java.time.LocalDate;
+
+public class Student extends Person {
+    private String faculty;
+    private int graduateYear;
+    public Student(String firsName, String lastName, LocalDate birthDate, String faculty, int graduateYear) {
+        super(firsName, lastName, birthDate);
+        this.faculty = faculty;
+        this.graduateYear = graduateYear;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public int getGraduateYear() {
+        return graduateYear;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
+    public void setGraduateYear(int graduateYear) {
+        this.graduateYear = graduateYear;
+    }
+}
