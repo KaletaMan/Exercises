@@ -1,0 +1,20 @@
+package exercises;
+
+public class Factorial {
+    public static void main(String[] args) {
+        int[] numbers = new int[11];
+        for (int i = 0; i < 11; i++) {
+            numbers[i] = i;
+        }
+        for (int a : numbers) {
+            if (a != 0) {
+                int b = a - 1;
+                while (b > 0) {
+                    a = a * b;
+                    b--;
+                }
+            } else { a = 1; }
+            System.out.print(a + " ");
+        }
+    }
+}
