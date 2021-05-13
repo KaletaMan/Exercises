@@ -1,0 +1,18 @@
+package exercises;
+
+public class FibonacciSequence {
+    public static void main(String[] args) {
+        int[] numbers = {0,1,2,3,4,5,6,7};
+        int a = numbers[0];
+        System.out.print(a + " ");
+        int b = numbers[1];
+        System.out.print(b + " ");
+        for (int c : numbers) {
+            System.out.print(a + b + " ");
+            c = b;
+            b = a + b;
+            a = c;
+        }
+
+    }
+}
